@@ -1,10 +1,16 @@
 import "./App.css";
+import Navbar from "./Navbar";
+import Home from "./home";
 
 function App() {
+    const title = "This home page currently has nothing in it";
+    const likes = 50;
+
     return (
         <div className="App">
+            <Navbar />
             <div className="content">
-                <h1>This home page current has nothing in it</h1>
+                <Home />
             </div>
         </div>
     );
