@@ -1,24 +1,30 @@
 // import "./App.css";
-import NavbarElement from "./Navbar";
+import NavbarElement from "./components/Navbar";
 import Home from "./home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Create from "./create";
+import BootstrapNotes from "./notes/bootstrap";
+import { Container } from "react-bootstrap";
 
 function App() {
     return (
         <Router>
             <div className="App">
-                <NavbarElement />
-                <div className="content">
-                    <Switch>
-                        <Route exact path="/">
-                            <Home />
-                        </Route>
-                        <Route path="/create">
-                            <Create />
-                        </Route>
-                    </Switch>
-                </div>
+                <Container fluid>
+                    <div className="row">
+                        <NavbarElement />
+                    </div>
+                    <div className="row mt-3">
+                        <Switch>
+                            <Route exact path="/">
+                                <Home />
+                            </Route>
+                            <Route path="/bootstrap">
+                                <BootstrapNotes />
+                            </Route>
+                        </Switch>
+                    </div>
+                </Container>
             </div>
         </Router>
     );
