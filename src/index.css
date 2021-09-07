@@ -7,7 +7,7 @@
     color: #333;
 }
 
-.navbar {
+/* .navbar {
     padding: 20px;
     display: flex;
     align-items: center;
@@ -41,7 +41,7 @@
 }
 
 /*blog previews*/
-.blog-preview {
+/* .blog-preview {
     padding: 10px 16px;
     margin: 20px 0;
     border-bottom: 1px solid #fafafa;
@@ -55,4 +55,4 @@
     font-size: 20px;
     color: #f1356d;
     margin-bottom: 8px;
-}
+} */
