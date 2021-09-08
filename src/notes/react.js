@@ -11,9 +11,8 @@ import {
 } from "../code-snippets/react-snippets";
 
 const ReactNotes = () => {
-    const codeString = "(num) => num + 1";
     return (
-        <Container fluid>
+        <Container fluid className="mb-6">
             <div className="mb-3">
                 <ul>
                     <Index link="#where-to-start" content="Where to Start?" />
@@ -31,6 +30,10 @@ const ReactNotes = () => {
                     <Index
                         link="#new-components"
                         content="Create New Components"
+                    />
+                    <Index
+                        link="#callback"
+                        content="Use Callback Handlers to Communicate Up"
                     />
                 </ul>
             </div>
@@ -52,6 +55,10 @@ const ReactNotes = () => {
                             Introduction to JSX
                         </a>
                     </li>
+                    <Index
+                        link="https://reactjs.org/docs/rendering-elements.html"
+                        content="How React Render Elements"
+                    />
                 </ul>
                 <h2 className="libraries" id="libraries">
                     Useful Libraries in React
@@ -100,6 +107,11 @@ const ReactNotes = () => {
                             example
                         </a>
                     </li>
+                    <li>
+                        We use <code>props</code> to pass data information down
+                        the component tree. It can't be passed up the component
+                        tree; but we can use a <b>callback handler</b> to do so.
+                    </li>
                 </ul>
                 <h2 className="hooks" id="hooks">
                     Hooks
@@ -113,7 +125,9 @@ const ReactNotes = () => {
                     return an array. The first element in the return array is
                     the initialized variable; the second element in the return
                     array is a function to update this state variable.{" "}
-                    <a href="">example</a>
+                    <a href="https://github.com/yitongknows/code-snippets-demo/blob/main/react/hooks.md">
+                        example
+                    </a>
                 </p>
                 <ul>
                     <li>
@@ -157,8 +171,8 @@ const ReactNotes = () => {
                     {FriendListText}
                 </SyntaxHighlighter>
                 <p>
-                    Then, to utilize the <code>FriendList</code> component,
-                    simply do:
+                    Then, to utilize/instantiate the <code>FriendList</code>{" "}
+                    component, simply do:
                 </p>
                 <SyntaxHighlighter
                     language="jsx"
@@ -171,6 +185,19 @@ const ReactNotes = () => {
                 </SyntaxHighlighter>
                 <p>The output will look like this:</p>
                 <FriendList friends={friends} />
+
+                <h2 className="callback" id="callback">
+                    Use Callback Handlers to Communicate Up
+                </h2>
+                <p>
+                    In section <a href="#props">Props</a>, we disscuss that we
+                    can only use props to pass data down the component tree, but
+                    cannot pass it upwards. However, we can bypass this
+                    limitation by using <b>callback handlers</b>.{" "}
+                    <a href="https://github.com/yitongknows/code-snippets-demo/blob/main/react/callback.md">
+                        example
+                    </a>
+                </p>
             </div>
         </Container>
     );

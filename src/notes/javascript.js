@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
-
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 const JavascriptNotes = () => {
     return (
         <Container fluid>
@@ -21,6 +22,9 @@ const JavascriptNotes = () => {
                             see here.
                         </a>
                     </p>
+                </div>
+                <div className="syntax">
+                    <p>Different ways of defining function:</p>
                 </div>
             </div>
         </Container>
