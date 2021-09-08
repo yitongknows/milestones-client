@@ -1,32 +1,37 @@
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Index from "../components";
+import {
+    friends,
+    FriendList,
+    friendsText,
+    FriendListText,
+} from "../code-snippets/react-snippets";
 
-const BootstrapNotes = () => {
+const ReactNotes = () => {
     const codeString = "(num) => num + 1";
     return (
         <Container fluid>
             <div className="mb-3">
                 <ul>
-                    <li>
-                        <a href="#where-to-start">Where to Start?</a>
-                    </li>
-                    <li>
-                        <a href="#libraries">Useful Libraries in React</a>
-                    </li>
-                    <li>
-                        <a href="#folders-files">Main Folders and Files</a>
-                    </li>
-                    <li>
-                        <a href="#jsx">JSX</a>
-                    </li>
-                    <li>
-                        <a href="#props">Props</a>
-                    </li>
-                    <li>
-                        <a href="#hooks">Hooks</a>
-                    </li>
+                    <Index link="#where-to-start" content="Where to Start?" />
+                    <Index
+                        link="#libraries"
+                        content="Useful Libraries in React"
+                    />
+                    <Index
+                        link="#folders-files"
+                        content="Main Folders and Files"
+                    />
+                    <Index link="#jsx" content="JSX" />
+                    <Index link="#props" content="Props" />
+                    <Index link="#hooks" content="Hooks" />
+                    <Index
+                        link="#new-components"
+                        content="Create New Components"
+                    />
                 </ul>
             </div>
             <div className="content">
@@ -129,12 +134,46 @@ const BootstrapNotes = () => {
                         </a>
                     </li>
                 </ul>
-                <SyntaxHighlighter language="javascript" style={docco}>
-                    {codeString}
+                <h2 className="new-components" id="new-components">
+                    Create New Components
+                </h2>
+                <p>To create a new React component, see example below:</p>
+                <p>First, create a list of object for the display data</p>
+                <SyntaxHighlighter
+                    language="javascript"
+                    style={prism}
+                    children={friendsText}
+                    showLineNumbers="True"
+                />
+                <p>
+                    Then, create a new React component called{" "}
+                    <code>FriendList</code>:
+                </p>
+                <SyntaxHighlighter
+                    language="jsx"
+                    style={prism}
+                    showLineNumbers="True"
+                >
+                    {FriendListText}
                 </SyntaxHighlighter>
+                <p>
+                    Then, to utilize the <code>FriendList</code> component,
+                    simply do:
+                </p>
+                <SyntaxHighlighter
+                    language="jsx"
+                    style={prism}
+                    showLineNumbers="True"
+                >
+                    {`import { friends,FriendList } from "../code-snippets/react-snippets";
+...
+<FriendList friends={friends} />`}
+                </SyntaxHighlighter>
+                <p>The output will look like this:</p>
+                <FriendList friends={friends} />
             </div>
         </Container>
     );
 };
 
-export default BootstrapNotes;
+export default ReactNotes;
