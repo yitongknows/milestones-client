@@ -199,6 +199,13 @@ const ReactNotes = () => {
                         example
                     </a>
                 </p>
+                <p>
+                    For manipulating <b>state</b> and <b>handlers</b> across
+                    components,{" "}
+                    <a href="https://github.com/yitongknows/code-snippets-demo/blob/main/react/lift-state.md">
+                        see here
+                    </a>
+                </p>
                 <h2 className="inline" id="inline">
                     Inline Handler
                 </h2>
@@ -219,8 +226,7 @@ const ReactNotes = () => {
                         return(
                             <List printStr2 = {printStr.bind(str)}/>
                         );
-                    }
-                    `}</SyntaxHighlighter>
+                    }`}</SyntaxHighlighter>
                 </p>
             </div>
         </Container>
