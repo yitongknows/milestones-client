@@ -35,6 +35,7 @@ const ReactNotes = () => {
                         link="#callback"
                         content="Use Callback Handlers to Communicate Up"
                     />
+                    <Index link="#inline" content="Inline Handler" />
                 </ul>
             </div>
             <div className="content">
@@ -197,6 +198,29 @@ const ReactNotes = () => {
                     <a href="https://github.com/yitongknows/code-snippets-demo/blob/main/react/callback.md">
                         example
                     </a>
+                </p>
+                <h2 className="inline" id="inline">
+                    Inline Handler
+                </h2>
+                <p>
+                    One way to achieve <b>inline handler</b> is to use the{" "}
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind">
+                        bind method.
+                    </a>
+                    Example:
+                    <SyntaxHighlighter
+                        language="jsx"
+                        style={prism}
+                        showLineNumbers="True"
+                    >{`const App = () => {
+                        const str = "Hello World";
+                        const printStr = () => console.log(str);
+                        ...
+                        return(
+                            <List printStr2 = {printStr.bind(str)}/>
+                        );
+                    }
+                    `}</SyntaxHighlighter>
                 </p>
             </div>
         </Container>
