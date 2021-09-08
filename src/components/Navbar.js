@@ -13,7 +13,7 @@ const NavbarElement = () => {
                     height="30"
                     className="d-inline-block align-top"
                 />{" "}
-                Paopao Island
+                YITONGKNOWS
             </Navbar.Brand>{" "}
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

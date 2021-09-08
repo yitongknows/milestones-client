@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Create from "./create";
 import BootstrapNotes from "./notes/bootstrap";
 import { Container } from "react-bootstrap";
+import JavascriptNotes from "./notes/javascript";
 
 function App() {
     return (
@@ -19,8 +20,11 @@ function App() {
                             <Route exact path="/">
                                 <Home />
                             </Route>
-                            <Route path="/bootstrap">
+                            <Route exact path="/bootstrap">
                                 <BootstrapNotes />
+                            </Route>
+                            <Route exact path="/js">
+                                <JavascriptNotes />
                             </Route>
                         </Switch>
                     </div>

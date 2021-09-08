@@ -1,28 +1,31 @@
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const BootstrapNotes = () => {
+    const codeString = "(num) => num + 1";
     return (
         <Container fluid>
             <div className="mb-3">
                 <ul>
                     <li>
-                        <Link to="#where-to-start">Where to Start?</Link>
+                        <a href="#where-to-start">Where to Start?</a>
                     </li>
                     <li>
-                        <Link to="#libraries">Useful Libraries in React</Link>
+                        <a href="#libraries">Useful Libraries in React</a>
                     </li>
                     <li>
-                        <Link to="#folders-files">Main Folders and Files</Link>
+                        <a href="#folders-files">Main Folders and Files</a>
                     </li>
                     <li>
-                        <Link to="#jsx">JSX</Link>
+                        <a href="#jsx">JSX</a>
                     </li>
                     <li>
-                        <Link to="#props">Props</Link>
+                        <a href="#props">Props</a>
                     </li>
                     <li>
-                        <Link>State</Link>
+                        <a href="#hooks">Hooks</a>
                     </li>
                 </ul>
             </div>
@@ -93,6 +96,42 @@ const BootstrapNotes = () => {
                         </a>
                     </li>
                 </ul>
+                <h2 className="hooks" id="hooks">
+                    Hooks
+                </h2>
+                <ul>
+                    <li>Interacting with React state with Hooks</li>
+                </ul>
+                <p>
+                    To declare a new variable in the state, we can use the{" "}
+                    <code>useState</code> hook. The <code>useState</code> hook
+                    return an array. The first element in the return array is
+                    the initialized variable; the second element in the return
+                    array is a function to update this state variable.{" "}
+                    <a href="">example</a>
+                </p>
+                <ul>
+                    <li>
+                        An advanced hook is called <code>useReducer</code>,{" "}
+                        <a href="https://reactjs.org/docs/hooks-reference.html#usereducer">
+                            see details
+                        </a>
+                        .
+                    </li>
+                    <li>
+                        <a href="https://www.robinwieruch.de/react-usereducer-vs-usestate">
+                            useReducer vs useState
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://reactjs.org/docs/hooks-reference.html#usereducer">
+                            For more React Hooks
+                        </a>
+                    </li>
+                </ul>
+                <SyntaxHighlighter language="javascript" style={docco}>
+                    {codeString}
+                </SyntaxHighlighter>
             </div>
         </Container>
     );
