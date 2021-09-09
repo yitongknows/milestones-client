@@ -60,6 +60,14 @@ const ReactNotes = () => {
                         link="https://reactjs.org/docs/rendering-elements.html"
                         content="How React Render Elements"
                     />
+                    <Index
+                        link="https://www.robinwieruch.de/react-controlled-components"
+                        content="React Controlled Components"
+                    />
+                    <Index
+                        link="https://www.robinwieruch.de/react-component-types"
+                        content="Different Types of React Components"
+                    />
                 </ul>
                 <h2 className="libraries" id="libraries">
                     Useful Libraries in React
