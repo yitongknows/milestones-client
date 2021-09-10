@@ -8,12 +8,14 @@ import {
     FriendList,
     friendsText,
     FriendListText,
+    useEffectDemo,
 } from "../code-snippets/react-snippets";
 
 const ReactNotes = () => {
     return (
         <Container fluid className="mb-6">
             <div className="mb-3">
+                <h2>Table of Contents</h2>
                 <ul>
                     <Index link="#where-to-start" content="Where to Start?" />
                     <Index
@@ -122,12 +124,21 @@ const ReactNotes = () => {
                         tree; but we can use a <b>callback handler</b> to do so.
                     </li>
                 </ul>
+                <p>Destructuring Props:</p>
+                <SyntaxHighlighter
+                    language="jsx"
+                    style={prism}
+                    showLineNumbers="True"
+                >
+                    {`const { name, age, sex } = props`}
+                </SyntaxHighlighter>
                 <h2 className="hooks" id="hooks">
                     Hooks
                 </h2>
-                <ul>
-                    <li>Interacting with React state with Hooks</li>
-                </ul>
+                <p>Interacting with React state with Hooks</p>
+                <h5>
+                    The <code>useState</code> Hook
+                </h5>
                 <p>
                     To declare a new variable in the state, we can use the{" "}
                     <code>useState</code> hook. The <code>useState</code> hook
@@ -138,6 +149,42 @@ const ReactNotes = () => {
                         example
                     </a>
                 </p>
+                <br />
+                <h5>
+                    The <code>useEffect</code> Hook
+                </h5>
+                <p>
+                    Sometimes, after the web page or a component is rendered, we
+                    want to perform some actions right after that. And it is
+                    really hard to keep track of what need to be done as the
+                    codebase grows larger and larger. Fortunately, React allows
+                    us to achieve this using the <code>useEffect</code> hook.
+                    For example, let's say I have a input box for storing a
+                    name:
+                </p>
+                <div className="useEffect-demo">
+                    <label htmlFor="name">Please enter a name</label>
+                    <br />
+                    <input type="text" id="name" />
+                </div>
+                <br />
+                <p>
+                    and we want to bind the user's input to a state variable and
+                    save it in a local storage:
+                </p>
+                <SyntaxHighlighter
+                    language="jsx"
+                    style={prism}
+                    showLineNumbers="True"
+                >
+                    {useEffectDemo}
+                </SyntaxHighlighter>
+                <p>
+                    This way, the <code>useEffect</code> hook is triggered every
+                    time the <code>name</code> variable gets updated; and it
+                    will store the new value into the local storage.
+                </p>
+                <h5>Others</h5>
                 <ul>
                     <li>
                         An advanced hook is called <code>useReducer</code>,{" "}
@@ -156,6 +203,10 @@ const ReactNotes = () => {
                             For more React Hooks
                         </a>
                     </li>
+                    <Index
+                        link="https://reactjs.org/docs/hooks-effect.html"
+                        content="the useEffect hook"
+                    />
                 </ul>
                 <h2 className="new-components" id="new-components">
                     Create New Components
@@ -194,7 +245,6 @@ const ReactNotes = () => {
                 </SyntaxHighlighter>
                 <p>The output will look like this:</p>
                 <FriendList friends={friends} />
-
                 <h2 className="callback" id="callback">
                     Use Callback Handlers to Communicate Up
                 </h2>
