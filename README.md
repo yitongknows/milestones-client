@@ -1,5 +1,6 @@
 # Personal Site Link
 > Note: this site is still under development
+> The demo site contains some notes I summarized while learning React
 
 https://yitongknows.com/React
 
