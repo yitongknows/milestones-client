@@ -3,9 +3,6 @@
 >
 > The demo site contains some notes I summarized while learning React
 
-https://yitongknows.com/React
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
